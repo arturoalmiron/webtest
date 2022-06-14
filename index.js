@@ -6,7 +6,7 @@ const options = {
 	}
 };
 
-fetch('https://v2.jokeapi.dev/joke/Dark?type=twopart&amount=2', options)
+fetch('https://v2.jokeapi.dev/joke/Miscellaneous,Dark,Pun?type=twopart&amount=2', options)
 	.then(response => response.json())
 	.then(response => {
         console.log(response);
