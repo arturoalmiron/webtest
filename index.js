@@ -5,7 +5,6 @@ const options = {
 		'X-RapidAPI-Host': 'https://v2.jokeapi.dev'
 	}
 };
-
 fetch('https://v2.jokeapi.dev/joke/Miscellaneous,Dark,Pun?type=twopart&amount=2', options)
 	.then(response => response.json())
 	.then(response => {
@@ -17,3 +16,18 @@ fetch('https://v2.jokeapi.dev/joke/Miscellaneous,Dark,Pun?type=twopart&amount=2'
     })
     
 	.catch(err => console.error(err));
+
+document.querySelector('#getJoke').addEventListener('click', function () {
+    fetch('https://v2.jokeapi.dev/joke/Miscellaneous,Dark,Pun?type=twopart&amount=2', options)
+	.then(response => response.json())
+	.then(response => {
+        console.log(response);
+        document.getElementById('setup').innerHTML = response.jokes[0].setup;
+        document.getElementById('delivery').innerHTML = response.jokes[1].delivery;
+        console.log(response.jokes[0].setup);
+        console.log(response.jokes[1].delivery);
+    })
+    
+	.catch(err => console.error(err));
+  
+  }, false);
