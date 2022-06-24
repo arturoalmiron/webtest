@@ -4,15 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="dist/output.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.4/html2canvas.min.js"></script>
+  <script src="index.js" type="module"></script>
 </head>
 <body class="font-sans">
   <div class="justify-between px-8 py-6 mx-auto my-auto md:px-14 md:py-10 lg:px-24 lg:py-18">
-    <div id="setup"></div><br>
-    <div id="delivery"></div><br>
-    <button class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow" 
+    <div  id="jokeArea">
+      <div id="setup"></div><br>
+      <div id="delivery"></div><br>
+    </div>
+    <button class="px-4 py-2 font-semibold text-gray-800 bg-white border border-gray-400 rounded shadow hover:bg-gray-100" 
     id='getJoke' onclick={fetch}>New Joke</button>
+    <button class="items-center px-4 py-2 font-semibold text-gray-800 bg-white border border-gray-400 rounded shadow hover:bg-gray-100"
+    id='capture' onclick={html2canvas}>
+      <svg class="w-4 h-4 mr-2 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z"/></svg>
+      <span>Save</span>
+    </button>
     <div id="app"></div>
   </div>
-  <script src="index.js" type="module"></script>
+
 </body>
 </html>
