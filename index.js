@@ -5,7 +5,7 @@ const options = {
 		'X-RapidAPI-Host': 'https://v2.jokeapi.dev'
 	}
 };
-fetch('https://v2.jokeapi.dev/joke/Miscellaneous,Dark,Pun?type=twopart&amount=2', options)
+fetch('https://v2.jokeapi.dev/joke/Miscellaneous,Dark,Pun?blacklistFlags=religious,political,racist,sexist&type=twopart&amount=2', options)
 	.then(response => response.json())
 	.then(response => {
         console.log(response);
