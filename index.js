@@ -40,7 +40,8 @@ document.querySelector('#getJoke').addEventListener('click', function () {
 document.querySelector('#capture').addEventListener('click', function () {
     html2canvas(document.getElementById("jokeArea")).then((canvas) => {
         let a = document.createElement("a");
-    a.download = "capturejoke.png";
+        let ms = Date.now();
+    a.download = "capturejoke" + ms + ".png";
     a.href = canvas.toDataURL("image/png");
     a.click(); // MAY NOT ALWAYS WORK!
     })
